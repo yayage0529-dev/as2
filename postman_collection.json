@@ -1,0 +1,146 @@
+{
+  "info": {
+    "name": "Osborne.AI Student Services - Collection",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "version": "1.0.0"
+  },
+  "item": [
+    {
+      "name": "Create Student",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"student_id\": \"25294047\",\n  \"name\": \"Yaya\",\n  \"email\": \"yaya@aut.nz\",\n  \"programme\": \"Microservices\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5001/students",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "students"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Student",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5001/students/25294047",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5001",
+          "path": [
+            "students",
+            "25294047"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Grade",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"student_id\": \"25294047\",\n  \"course_code\": \"INFS605\",\n  \"grade\": \"A+++\",\n  \"term\": \"2025S2\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5002/grades",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5002",
+          "path": [
+            "grades"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Grades for Student",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5002/grades/student/25294047",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5002",
+          "path": [
+            "grades",
+            "student",
+            "25294047"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Add Timetable Entry",
+      "request": {
+        "method": "POST",
+        "header": [
+          {
+            "key": "Content-Type",
+            "value": "application/json"
+          }
+        ],
+        "body": {
+          "mode": "raw",
+          "raw": "{\n  \"student_id\": \"25294047\",\n  \"day\": \"Monday\",\n  \"start_time\": \"09:00\",\n  \"end_time\": \"11:00\",\n  \"course_code\": \"INFS605\",\n  \"location\": \"WF613\"\n}"
+        },
+        "url": {
+          "raw": "http://localhost:5003/timetable",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5003",
+          "path": [
+            "timetable"
+          ]
+        }
+      }
+    },
+    {
+      "name": "Get Timetable for Student",
+      "request": {
+        "method": "GET",
+        "url": {
+          "raw": "http://localhost:5003/timetable/student/25294047",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "5003",
+          "path": [
+            "timetable",
+            "student",
+            "25294047"
+          ]
+        }
+      }
+    }
+  ]
+}
